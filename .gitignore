@@ -1,0 +1,6 @@
+# ingnore IDE specific files
+.idea
+
+# ignore vendor directory
+vendor
+

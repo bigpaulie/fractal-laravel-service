@@ -1,0 +1,26 @@
+{
+    "name": "bigpaulie/fractal-laravel-service",
+    "description": "Fractal service provider for Laravel Framework",
+    "keywords": ["laravel", "fractal", "service", "provider"],
+    "type": "library",
+    "require": {
+        "illuminate/support": "^5.0",
+        "league/fractal": "^0.15.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paul P",
+            "email": "bigpaulie25ro@yahoo.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "bigpaulie\\fractal\\": "src/"
+        }
+    }
+}
