@@ -1,4 +1,5 @@
-#Fractal service provider for Laravel Framework [![Build Status](https://travis-ci.org/bigpaulie/fractal-laravel-service.svg?branch=master)](https://travis-ci.org/bigpaulie/fractal-laravel-service)
+#Fractal service provider for Laravel Framework 
+[![Build Status](https://travis-ci.org/bigpaulie/fractal-laravel-service.svg?branch=master)](https://travis-ci.org/bigpaulie/fractal-laravel-service) [![Latest Stable Version](https://poser.pugx.org/bigpaulie/fractal-laravel-service/v/stable)](https://packagist.org/packages/bigpaulie/fractal-laravel-service) [![Total Downloads](https://poser.pugx.org/bigpaulie/fractal-laravel-service/downloads)](https://packagist.org/packages/bigpaulie/fractal-laravel-service) [![Latest Unstable Version](https://poser.pugx.org/bigpaulie/fractal-laravel-service/v/unstable)](https://packagist.org/packages/bigpaulie/fractal-laravel-service) 
 
 This is a simple service provider for Laravel 5.x
 ## Installation
