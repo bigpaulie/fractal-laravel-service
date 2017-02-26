@@ -1,6 +1,6 @@
 # ingnore IDE specific files
 .idea
 
-# ignore vendor directory
+# ignore composer related files and directories
+composer.lock
 vendor
-
