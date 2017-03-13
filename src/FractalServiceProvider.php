@@ -2,6 +2,7 @@
 
 namespace bigpaulie\fractal;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
 use League\Fractal\Manager;
 use League\Fractal\TransformerAbstract;
@@ -20,7 +21,7 @@ class FractalServiceProvider extends ServiceProvider
     public function boot()
     {
         // get an instance of Manager
-        $fractal = $this->app->make('\League\Fractal\Manager');
+        $fractal = $this->app->make(Manager::class);
 
         // setup response for item
         response()->macro('item', function ($item, TransformerAbstract $transformer, $status = 200, array $headers = []) use ($fractal) {
@@ -57,13 +58,13 @@ class FractalServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('\League\Fractal\Manager', function ($app) {
+        $this->app->bind(Manager::class, function ($app) {
 
             /**
              * Get an instance of \Illuminate\Http\Request
              * and pass it to the Manager
              */
-            $request = $app->make('\Illuminate\Http\Request');
+            $request = $app->make(Request::class);
 
             $manager = new Manager();
             $manager->setSerializer(new ApiSerializer());
