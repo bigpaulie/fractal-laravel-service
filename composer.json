@@ -4,7 +4,7 @@
     "keywords": ["laravel", "fractal", "service", "provider"],
     "type": "library",
     "require": {
-        "php": ">=5.6.4",
+        "php": ">=5.6.4|^7.0",
         "illuminate/support": "^5.0",
         "league/fractal": "^0.15.0"
     },
