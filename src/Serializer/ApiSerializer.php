@@ -1,6 +1,6 @@
 <?php
 
-namespace bigpaulie\fractal\serializers;
+namespace bigpaulie\fractal\Serializer;
 
 use League\Fractal\Serializer\DataArraySerializer;
 

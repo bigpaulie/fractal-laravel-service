@@ -5,11 +5,12 @@ namespace bigpaulie\fractal;
 use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
 use League\Fractal\Manager;
+use League\Fractal\Resource\ExceptionResource;
 use League\Fractal\TransformerAbstract;
 use League\Fractal\Resource\Item;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
-use bigpaulie\fractal\serializers\ApiSerializer;
+use bigpaulie\fractal\Serializer\ApiSerializer;
 
 /**
  * Class FractalServiceProvider
@@ -25,24 +26,27 @@ class FractalServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // get an instance of Manager
+        /** @var Manager $fractal */
         $fractal = $this->app->make(Manager::class);
 
-        // setup response for item
+        /**
+         * Register a macro for item response
+         */
         response()->macro('item', function ($item, TransformerAbstract $transformer, $status = 200, array $headers = []) use ($fractal) {
-
+            /** @var Item $resource */
             $resource = new Item($item, $transformer);
             return response()->json(
                 $fractal->createData($resource)->toArray(),
                 $status,
                 $headers
             );
-
         });
 
-        // setup response for collection
+        /**
+         * Register a macro fro collection response
+         */
         response()->macro('collection', function ($collection, TransformerAbstract $transformer, $paginator = null, $status = 200, array $headers = []) use ($fractal) {
-
+            /** @var Collection $resource */
             $resource = new Collection($collection, $transformer);
             if ( $paginator )
                 $resource->setPaginator( new IlluminatePaginatorAdapter($paginator) );
@@ -52,7 +56,19 @@ class FractalServiceProvider extends ServiceProvider
                 $status,
                 $headers
             );
+        });
 
+        /**
+         * Register a macro for exception response
+         */
+        response()->macro('exception', function ($exception, TransformerAbstract $transformer, $status = 500, array $headers = []) use ($fractal) {
+            /** @var ExceptionResource $resource */
+            $resource = new ExceptionResource($exception, $transformer);
+            return response()->json(
+                $fractal->createData($resource)->toArray(),
+                $status,
+                $headers
+            );
         });
     }
 

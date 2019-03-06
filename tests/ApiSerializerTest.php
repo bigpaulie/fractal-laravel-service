@@ -3,7 +3,7 @@
 use PHPUnit\Framework\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use bigpaulie\fractal\serializers\ApiSerializer;
+use bigpaulie\fractal\Serializer\ApiSerializer;
 
 class ApiSerializerTest extends TestCase
 {
