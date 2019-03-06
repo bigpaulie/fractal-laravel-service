@@ -26,7 +26,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "bigpaulie\\fractal\\FractalServiceProvider::class"
+                "bigpaulie\\fractal\\FractalServiceProvider"
             ]
         }
     }
