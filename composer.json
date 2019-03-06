@@ -23,6 +23,11 @@
             "bigpaulie\\fractal\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "bigpaulie\\fractal\\tests\\": "tests/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [

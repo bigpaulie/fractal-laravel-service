@@ -38,6 +38,19 @@ class ApiSerializer extends DataArraySerializer
     }
 
     /**
+     * @param $resourceKey
+     * @param array $data
+     * @return array
+     */
+    public function exception($resourceKey, array $data)
+    {
+        return [
+            'success' => false,
+            'data' => $data
+        ];
+    }
+
+    /**
      * Merges any relations into the data. The 'data' field is also removed.
      *
      * @param  array $transformedData
