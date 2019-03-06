@@ -11,12 +11,17 @@ use League\Fractal\Resource\Collection;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use bigpaulie\fractal\serializers\ApiSerializer;
 
+/**
+ * Class FractalServiceProvider
+ * @package bigpaulie\fractal
+ */
 class FractalServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
      *
      * @return void
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     public function boot()
     {
