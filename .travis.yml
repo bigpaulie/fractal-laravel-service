@@ -7,6 +7,7 @@ php:
 
 before_script:
   - travis_retry composer self-update
+  - if [ -n "$GH_TOKEN" ]; then composer config github-oauth.github.com ${GH_TOKEN}; fi;
   - travis_retry composer install --prefer-dist --no-interaction --dev
 
 script: ./vendor/bin/phpunit -c phpunit.xml
